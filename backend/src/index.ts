@@ -1,7 +1,7 @@
 import express from "express";
+import { ENV } from "./config/env";
 
 const app = express();
-const port = 3000;
 
 app.get("/", (req, res) => {
   res.json({
@@ -14,6 +14,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(ENV.PORT, () => {
+  console.log("Server is up and running on PORT:", ENV.PORT);
 });
